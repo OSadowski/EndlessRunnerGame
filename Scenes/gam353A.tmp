@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://duha441r6caj"]
+
+[ext_resource type="PackedScene" uid="uid://cjr5ies0qbp6k" path="res://Scenes/player.tscn" id="2_fx411"]
+[ext_resource type="Script" path="res://Scripts/levels.gd" id="2_lh1ow"]
+[ext_resource type="PackedScene" uid="uid://rsdtxhkc1x0t" path="res://Scenes/levels/level_1.tscn" id="3_h6dni"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Levels" type="Node2D" parent="."]
+script = ExtResource("2_lh1ow")
+
+[node name="level_1" parent="Levels" instance=ExtResource("3_h6dni")]
+
+[node name="Player" parent="." instance=ExtResource("2_fx411")]
+position = Vector2(1, 57)
+
+[node name="Camera" type="Camera2D" parent="Player"]
+position = Vector2(0, 55)
+zoom = Vector2(3, 3)
+position_smoothing_speed = 10.0

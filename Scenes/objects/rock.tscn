@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjcrnsh04m4gf"]
+
+[ext_resource type="Texture2D" uid="uid://dxyuqceqtbsue" path="res://Tiny Ski/Tiles/tile_0081.png" id="1_0i110"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rlkbl"]
+radius = 6.0
+
+[node name="rock" type="StaticBody2D"]
+z_index = 11
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0i110")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_rlkbl")

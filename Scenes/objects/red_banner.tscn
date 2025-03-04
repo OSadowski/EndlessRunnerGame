@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd6iddtx64lq2"]
+
+[ext_resource type="Texture2D" uid="uid://dfye7454erobh" path="res://Tiny Ski/Tiles/tile_0010.png" id="1_6w0yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1bb4"]
+size = Vector2(11, 8)
+
+[node name="redBanner" type="StaticBody2D"]
+z_index = 11
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6w0yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_l1bb4")

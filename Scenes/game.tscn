@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://duha441r6caj"]
+
+[ext_resource type="Script" uid="uid://ccn1brc5rgkms" path="res://Scripts/game.gd" id="1_3dryh"]
+[ext_resource type="PackedScene" uid="uid://cjr5ies0qbp6k" path="res://Scenes/player.tscn" id="2_fx411"]
+[ext_resource type="Script" uid="uid://cg3ihdxt2jtt" path="res://Scripts/levels.gd" id="2_lh1ow"]
+[ext_resource type="PackedScene" uid="uid://rsdtxhkc1x0t" path="res://Scenes/levels/level_1.tscn" id="3_h6dni"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3dryh"]
+font_size = 400
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wowpa"]
+font_size = 400
+font_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_3dryh")
+
+[node name="Levels" type="Node2D" parent="."]
+script = ExtResource("2_lh1ow")
+
+[node name="level_1" parent="Levels" instance=ExtResource("3_h6dni")]
+
+[node name="Player" parent="." instance=ExtResource("2_fx411")]
+position = Vector2(1, 57)
+
+[node name="Camera" type="Camera2D" parent="Player"]
+position = Vector2(0, 55)
+zoom = Vector2(3, 3)
+
+[node name="HUD" type="Control" parent="Player/Camera"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 20.0
+offset_bottom = 20.0
+scale = Vector2(0.05, 0.05)
+
+[node name="Label" type="Label" parent="Player/Camera/HUD"]
+z_index = 100
+layout_mode = 0
+offset_left = -3820.0
+offset_top = -2180.0
+offset_right = -2488.0
+offset_bottom = -1498.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_3dryh")
+metadata/_edit_use_anchors_ = true
+
+[node name="scoreLabel" type="Label" parent="Player/Camera/HUD"]
+z_index = 100
+layout_mode = 0
+offset_left = -2500.0
+offset_top = -2180.0
+offset_right = -1168.0
+offset_bottom = -1498.0
+text = "1"
+label_settings = SubResource("LabelSettings_3dryh")
+metadata/_edit_use_anchors_ = true
+
+[node name="deathText" type="Label" parent="Player/Camera/HUD"]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = -2460.0
+offset_top = -820.0
+offset_right = 2548.0
+offset_bottom = 824.0
+text = "You have Crashed
+Score:
+Press \"SPACE\" to try again"
+label_settings = SubResource("LabelSettings_wowpa")
+horizontal_alignment = 1
+vertical_alignment = 1
