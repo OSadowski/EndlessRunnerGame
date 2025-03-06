@@ -6,6 +6,10 @@ var VerticalSpeed
 var playerDead
 var increaseSpeed
 
+@onready var flagSound = $"../Sounds/FlagPointSound"
+@onready var music = $"../Sounds/Music"
+@onready var gameOver = $"../Sounds/GameOver"
+
 func _ready() -> void:
 	VerticalSpeed = 10000
 	playerDead = false
@@ -29,6 +33,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body.collision_layer)
 	if body.collision_layer == 2:
 		playerDead = true
+		music.playing = false
+		gameOver.play()
 		HorizontalSpeed = 0
 		VerticalSpeed = 0
 
@@ -38,6 +44,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$"../Levels".spawnSetUp()
 	if area.collision_layer == 16:
 		get_parent().flagScore(10)
+		flagSound.play()
 		area.get_parent().queue_free()
 
 func speedIncrease():
