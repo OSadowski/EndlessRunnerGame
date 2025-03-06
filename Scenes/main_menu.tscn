@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6cp18rs6k1n8"]
+
+[ext_resource type="Script" uid="uid://d2ishuppbft70" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="PackedScene" uid="uid://rsdtxhkc1x0t" path="res://Scenes/levels/level_1.tscn" id="2_1ehe0"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="level_1" parent="." instance=ExtResource("2_1ehe0")]
+position = Vector2(440, -250)
+scale = Vector2(3, 3)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1000
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0182292
+anchor_top = 0.0509259
+anchor_right = 0.181424
+anchor_bottom = 0.149691
+offset_left = -21.0
+offset_top = -33.0
+offset_right = 21.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
