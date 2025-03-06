@@ -12,6 +12,7 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_wowpa"]
 font_size = 400
 font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_3dryh")
@@ -22,7 +23,7 @@ script = ExtResource("2_lh1ow")
 [node name="level_1" parent="Levels" instance=ExtResource("3_h6dni")]
 
 [node name="Player" parent="." instance=ExtResource("2_fx411")]
-position = Vector2(1, 57)
+position = Vector2(2, 129)
 
 [node name="Camera" type="Camera2D" parent="Player"]
 position = Vector2(0, 55)
@@ -37,22 +38,24 @@ scale = Vector2(0.05, 0.05)
 
 [node name="Label" type="Label" parent="Player/Camera/HUD"]
 z_index = 100
-layout_mode = 0
-offset_left = -3820.0
-offset_top = -2180.0
-offset_right = -2488.0
-offset_bottom = -1498.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -192.0
+anchor_top = -108.0
+anchor_right = -125.4
+anchor_bottom = -73.9
 text = "Score:"
 label_settings = SubResource("LabelSettings_3dryh")
 metadata/_edit_use_anchors_ = true
 
 [node name="scoreLabel" type="Label" parent="Player/Camera/HUD"]
 z_index = 100
-layout_mode = 0
-offset_left = -2500.0
-offset_top = -2180.0
-offset_right = -1168.0
-offset_bottom = -1498.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -126.0
+anchor_top = -108.0
+anchor_right = -59.4
+anchor_bottom = -73.9
 text = "1"
 label_settings = SubResource("LabelSettings_3dryh")
 metadata/_edit_use_anchors_ = true
@@ -61,13 +64,23 @@ metadata/_edit_use_anchors_ = true
 visible = false
 z_index = 100
 layout_mode = 0
-offset_left = -2460.0
-offset_top = -820.0
-offset_right = 2548.0
-offset_bottom = 824.0
+anchor_left = -123.0
+anchor_top = -41.0
+anchor_right = 127.4
+anchor_bottom = 41.2
 text = "You have Crashed
 Score:
 Press \"SPACE\" to try again"
 label_settings = SubResource("LabelSettings_wowpa")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Player/Camera/HUD/deathText"]
+z_index = -1
+layout_mode = 0
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 5000.0
+offset_bottom = 1840.0
+color = Color(0.641934, 0.641934, 0.641934, 1)

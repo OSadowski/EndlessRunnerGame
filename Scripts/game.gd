@@ -31,10 +31,12 @@ Press SPACE to try again"
 
 func updateScore():
 	score = score + 1
-	print(score)
 	addScore = false
 	await get_tree().create_timer(1).timeout
 	addScore = true
+	
+func flagScore(points):
+	score = score + points
 
 func resetScene():
 	if Input.is_action_just_pressed("space") and $"Player".playerDead == true:

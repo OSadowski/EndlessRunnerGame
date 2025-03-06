@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://b3plhkx7et48f"]
+[gd_scene load_steps=10 format=4 uid="uid://b3plhkx7et48f"]
 
 [ext_resource type="PackedScene" uid="uid://inehob35mv2w" path="res://Scenes/tile_map.tscn" id="1_klsmh"]
 [ext_resource type="Texture2D" uid="uid://db0wggmi8e3y" path="res://Tiny Ski/Tilemap/tilemap_packed.png" id="2_ktbqa"]
 [ext_resource type="PackedScene" uid="uid://dmhhwhg3sox7h" path="res://Scenes/objects/tree_stump.tscn" id="3_oi1sn"]
 [ext_resource type="PackedScene" uid="uid://cjcrnsh04m4gf" path="res://Scenes/objects/rock.tscn" id="4_bulqx"]
 [ext_resource type="PackedScene" uid="uid://cd6iddtx64lq2" path="res://Scenes/objects/red_banner.tscn" id="5_yrjhu"]
+[ext_resource type="PackedScene" uid="uid://dq8dsuiskp5l0" path="res://Scenes/flag_coin.tscn" id="6_rsv82"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rioc6"]
 texture = ExtResource("2_ktbqa")
@@ -229,3 +230,9 @@ position = Vector2(42, 283)
 
 [node name="rock2" parent="." instance=ExtResource("4_bulqx")]
 position = Vector2(22, 68)
+
+[node name="flagCoin" parent="." instance=ExtResource("6_rsv82")]
+position = Vector2(-17, 232)
+
+[node name="flagCoin2" parent="." instance=ExtResource("6_rsv82")]
+position = Vector2(21, 108)

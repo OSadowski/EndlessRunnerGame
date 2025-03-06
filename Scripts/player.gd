@@ -36,6 +36,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.collision_layer == 4:
 		$"../Levels".destroyLastLevel()
 		$"../Levels".spawnSetUp()
+	if area.collision_layer == 16:
+		get_parent().flagScore(10)
+		area.get_parent().queue_free()
 
 func speedIncrease():
 	VerticalSpeed = VerticalSpeed + 500

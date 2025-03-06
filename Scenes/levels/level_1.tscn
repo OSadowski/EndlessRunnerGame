@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://rsdtxhkc1x0t"]
+[gd_scene load_steps=11 format=4 uid="uid://rsdtxhkc1x0t"]
 
 [ext_resource type="PackedScene" uid="uid://inehob35mv2w" path="res://Scenes/tile_map.tscn" id="1_275np"]
 [ext_resource type="Texture2D" uid="uid://db0wggmi8e3y" path="res://Tiny Ski/Tilemap/tilemap_packed.png" id="2_axt10"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ut55khtvkujq" path="res://Scenes/objects/blue_banner.tscn" id="4_r2flp"]
 [ext_resource type="PackedScene" uid="uid://cd6iddtx64lq2" path="res://Scenes/objects/red_banner.tscn" id="5_p6k13"]
 [ext_resource type="PackedScene" uid="uid://dmhhwhg3sox7h" path="res://Scenes/objects/tree_stump.tscn" id="6_ysl8s"]
+[ext_resource type="PackedScene" uid="uid://dq8dsuiskp5l0" path="res://Scenes/flag_coin.tscn" id="7_qek6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rioc6"]
 texture = ExtResource("2_axt10")
@@ -234,3 +235,9 @@ position = Vector2(44, 237)
 
 [node name="treeStump" parent="." instance=ExtResource("6_ysl8s")]
 position = Vector2(2, 256)
+
+[node name="flagCoin" parent="." instance=ExtResource("7_qek6e")]
+position = Vector2(40, 117)
+
+[node name="flagCoin2" parent="." instance=ExtResource("7_qek6e")]
+position = Vector2(-42, 261)

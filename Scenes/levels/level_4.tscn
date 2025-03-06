@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dgqphym7ilxah"]
+[gd_scene load_steps=9 format=4 uid="uid://dgqphym7ilxah"]
 
 [ext_resource type="PackedScene" uid="uid://inehob35mv2w" path="res://Scenes/tile_map.tscn" id="1_nmreu"]
 [ext_resource type="Texture2D" uid="uid://db0wggmi8e3y" path="res://Tiny Ski/Tilemap/tilemap_packed.png" id="2_guym0"]
 [ext_resource type="PackedScene" uid="uid://dmhhwhg3sox7h" path="res://Scenes/objects/tree_stump.tscn" id="3_24o8s"]
 [ext_resource type="PackedScene" uid="uid://cjcrnsh04m4gf" path="res://Scenes/objects/rock.tscn" id="4_elfy2"]
+[ext_resource type="PackedScene" uid="uid://dq8dsuiskp5l0" path="res://Scenes/flag_coin.tscn" id="5_njctx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rioc6"]
 texture = ExtResource("2_guym0")
@@ -215,3 +216,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 166)
 shape = SubResource("RectangleShape2D_debrw")
+
+[node name="flagCoin" parent="." instance=ExtResource("5_njctx")]
+position = Vector2(11, 309)
+
+[node name="flagCoin2" parent="." instance=ExtResource("5_njctx")]
+position = Vector2(-41, 42)
