@@ -21,12 +21,10 @@ func _process(delta: float) -> void:
 		label.visible = false
 		scoreLabel.visible = false
 		deathText.text = "You have Crashed
-Score: " + str(score) + "
-Press SPACE to try again"
+Score: " + str(score)
 		deathText.visible = true
 		
 	scoreLabel.text = str(score)
-	resetScene()
 
 
 func updateScore():
@@ -38,6 +36,11 @@ func updateScore():
 func flagScore(points):
 	score = score + points
 
-func resetScene():
-	if Input.is_action_just_pressed("space") and $"Player".playerDead == true:
-		get_tree().reload_current_scene()
+
+
+
+func _on_try_again_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
